@@ -1,0 +1,418 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "BACKEND_HMS API",
+    "version": "1.0.0",
+    "description": "Hospital Management System Backend API"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:5000/api/v1",
+      "description": "Local"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "paths": {
+    "/auth/register": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Register user"
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Login user"
+      }
+    },
+    "/auth/verify": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Verify email OTP"
+      }
+    },
+    "/auth/forget": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Forgot password"
+      }
+    },
+    "/auth/reset-password": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Reset password"
+      }
+    },
+    "/auth/change-password": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Change password"
+      }
+    },
+    "/auth/refresh-token": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Refresh token"
+      }
+    },
+    "/auth/logout": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Logout"
+      }
+    },
+    "/user/profile": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Get profile"
+      },
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Update profile"
+      }
+    },
+    "/user/password": {
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Update password"
+      }
+    },
+    "/user/all": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "List users"
+      }
+    },
+    "/user/role/{id}": {
+      "patch": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Update user role"
+      }
+    },
+    "/user/block/{userId}": {
+      "patch": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Block user"
+      }
+    },
+    "/user/unblock/{userId}": {
+      "patch": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Unblock user"
+      }
+    },
+    "/doctor": {
+      "get": {
+        "tags": [
+          "Doctor"
+        ],
+        "summary": "List doctors"
+      },
+      "post": {
+        "tags": [
+          "Doctor"
+        ],
+        "summary": "Create/update doctor profile"
+      }
+    },
+    "/doctor/me": {
+      "get": {
+        "tags": [
+          "Doctor"
+        ],
+        "summary": "Get my doctor profile"
+      }
+    },
+    "/doctor/{id}": {
+      "get": {
+        "tags": [
+          "Doctor"
+        ],
+        "summary": "Get doctor by id"
+      }
+    },
+    "/doctor/{id}/availability": {
+      "patch": {
+        "tags": [
+          "Doctor"
+        ],
+        "summary": "Update doctor availability"
+      }
+    },
+    "/patient": {
+      "get": {
+        "tags": [
+          "Patient"
+        ],
+        "summary": "List patients"
+      },
+      "post": {
+        "tags": [
+          "Patient"
+        ],
+        "summary": "Create/update patient profile"
+      }
+    },
+    "/patient/me": {
+      "get": {
+        "tags": [
+          "Patient"
+        ],
+        "summary": "Get my patient profile"
+      }
+    },
+    "/patient/{id}": {
+      "get": {
+        "tags": [
+          "Patient"
+        ],
+        "summary": "Get patient by id"
+      }
+    },
+    "/patient/{id}/history": {
+      "post": {
+        "tags": [
+          "Patient"
+        ],
+        "summary": "Add medical history"
+      }
+    },
+    "/appointment": {
+      "get": {
+        "tags": [
+          "Appointment"
+        ],
+        "summary": "List appointments"
+      },
+      "post": {
+        "tags": [
+          "Appointment"
+        ],
+        "summary": "Book appointment"
+      }
+    },
+    "/appointment/{id}": {
+      "get": {
+        "tags": [
+          "Appointment"
+        ],
+        "summary": "Get appointment"
+      }
+    },
+    "/appointment/{id}/status": {
+      "patch": {
+        "tags": [
+          "Appointment"
+        ],
+        "summary": "Update appointment status"
+      }
+    },
+    "/prescription": {
+      "get": {
+        "tags": [
+          "Prescription"
+        ],
+        "summary": "List prescriptions"
+      },
+      "post": {
+        "tags": [
+          "Prescription"
+        ],
+        "summary": "Create prescription"
+      }
+    },
+    "/prescription/{id}": {
+      "get": {
+        "tags": [
+          "Prescription"
+        ],
+        "summary": "Get prescription"
+      }
+    },
+    "/pharmacy": {
+      "get": {
+        "tags": [
+          "Pharmacy"
+        ],
+        "summary": "List medicines"
+      },
+      "post": {
+        "tags": [
+          "Pharmacy"
+        ],
+        "summary": "Create medicine"
+      }
+    },
+    "/pharmacy/{id}": {
+      "get": {
+        "tags": [
+          "Pharmacy"
+        ],
+        "summary": "Get medicine"
+      },
+      "put": {
+        "tags": [
+          "Pharmacy"
+        ],
+        "summary": "Update medicine"
+      },
+      "delete": {
+        "tags": [
+          "Pharmacy"
+        ],
+        "summary": "Delete medicine"
+      }
+    },
+    "/pharmacy/{id}/stock": {
+      "patch": {
+        "tags": [
+          "Pharmacy"
+        ],
+        "summary": "Update medicine stock"
+      }
+    },
+    "/lab": {
+      "get": {
+        "tags": [
+          "Lab"
+        ],
+        "summary": "List tests"
+      },
+      "post": {
+        "tags": [
+          "Lab"
+        ],
+        "summary": "Book lab test"
+      }
+    },
+    "/lab/{id}": {
+      "get": {
+        "tags": [
+          "Lab"
+        ],
+        "summary": "Get lab test"
+      }
+    },
+    "/lab/{id}/status": {
+      "patch": {
+        "tags": [
+          "Lab"
+        ],
+        "summary": "Update test status"
+      }
+    },
+    "/lab/{id}/report": {
+      "patch": {
+        "tags": [
+          "Lab"
+        ],
+        "summary": "Upload report file"
+      }
+    },
+    "/lab/{id}/report-url": {
+      "patch": {
+        "tags": [
+          "Lab"
+        ],
+        "summary": "Set report URL"
+      }
+    },
+    "/billing/invoice": {
+      "get": {
+        "tags": [
+          "Billing"
+        ],
+        "summary": "List invoices"
+      },
+      "post": {
+        "tags": [
+          "Billing"
+        ],
+        "summary": "Create invoice"
+      }
+    },
+    "/billing/invoice/{id}": {
+      "get": {
+        "tags": [
+          "Billing"
+        ],
+        "summary": "Get invoice"
+      }
+    },
+    "/billing/invoice/{id}/pay": {
+      "patch": {
+        "tags": [
+          "Billing"
+        ],
+        "summary": "Add payment"
+      }
+    },
+    "/notification": {
+      "post": {
+        "tags": [
+          "Notification"
+        ],
+        "summary": "Create notification"
+      }
+    },
+    "/notification/me": {
+      "get": {
+        "tags": [
+          "Notification"
+        ],
+        "summary": "My notifications"
+      }
+    },
+    "/notification/me/{id}/read": {
+      "patch": {
+        "tags": [
+          "Notification"
+        ],
+        "summary": "Mark as read"
+      }
+    }
+  }
+}
